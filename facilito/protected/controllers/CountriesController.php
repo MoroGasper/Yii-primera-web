@@ -3,6 +3,7 @@
 	{
 		public function actionIndex()
 		{
+			//Exportar excel si existe la solicitud get
 			if (isset($_GET["excel"]))
 			{
 				$model = Countries::model()->findAll();
@@ -10,6 +11,7 @@
 				Yii::app()->request->sendFile("Countries.xls", $content);
 			}
 
+			//Mostrar los datos de la tabla countries
 			$countries=Countries::model()->findAll();
 			$this->render("index", array("countries"=>$countries));
 		}
@@ -43,7 +45,7 @@
 				else
 				{
 					Yii::app()->user->setFlash("error","No se Actualizó.");
-				}#
+				}
 			}
 			$this->render("update", array("model"=>$model));
 		}
@@ -56,12 +58,14 @@
 
 		public function actionView($id)
 		{
+			//Mostrar detalle del registro seleccionado
 			$model=Countries::model()->findByPk($id);
 			$this->render("view",array("model"=>$model));
 		}
 
 		public function actionEnabled($id)
 		{
+			//Cambiar valor del campo(status) en la tabla(countries) del registro seleccionado
 			$model=Countries::model()->findByPk($id);
 			if ($model->status==1)
 			{
