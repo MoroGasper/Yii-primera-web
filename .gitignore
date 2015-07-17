@@ -1,0 +1,8 @@
+#B:\xampp\htdocs\Publico\Practicas\yii\ignore
+.phpintel/
+demo/
+requirements/
+CHANGELOG
+LICENSE
+README
+UPGRADE
