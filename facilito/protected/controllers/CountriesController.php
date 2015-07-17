@@ -3,11 +3,12 @@
 	{
 		public function actionIndex()
 		{
-			#Yii::app()->user->setFlash("error","This is message error Ja Ja Ja");
-			#Yii::app()->user->setFlash("info","This is message error Ja Ja Ja");
-			#echo Yii::app()->happy->hi()."<br>";
-			#Yii::app()->happy->trato=null;
-			#echo Yii::app()->happy->hi()."<br>";
+			if (isset($_GET["excel"]))
+			{
+				$model = Countries::model()->findAll();
+				$content = $this->renderPartial("excel", array("model"=>$model), true);
+				Yii::app()->request->sendFile("Countries.xls", $content);
+			}
 
 			$countries=Countries::model()->findAll();
 			$this->render("index", array("countries"=>$countries));

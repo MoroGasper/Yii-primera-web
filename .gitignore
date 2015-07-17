@@ -2,6 +2,7 @@
 .phpintel/
 demo/
 requirements/
+facilito/protected/runtime/*
 CHANGELOG
 LICENSE
 README

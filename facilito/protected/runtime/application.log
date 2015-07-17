@@ -422,3 +422,145 @@ Stack trace:
 REQUEST_URI=/Publico/Practicas/yii/facilito/countries/index.cosa
 HTTP_REFERER=http://localhost/Publico/Practicas/yii/facilito/countries/index.cosa
 ---
+2015/07/17 09:12:06 [error] [exception.CException] exception 'CException' with message 'CHttpRequest and its behaviors do not have a method or closure named "sendFlie".' in B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CComponent->__call('sendFlie', Array)
+#1 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CHttpRequest->sendFlie('')
+#2 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\actions\CInlineAction.php(49): CountriesController->actionIndex()
+#3 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#7 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('countries/index')
+#8 B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 B:\xampp\htdocs\Publico\Practicas\yii\facilito\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/Publico/Practicas/yii/facilito/countries/index.cosa
+HTTP_REFERER=http://localhost/Publico/Practicas/yii/facilito/countries/index.cosa
+---
+2015/07/17 09:13:09 [error] [exception.CException] exception 'CException' with message 'CHttpRequest and its behaviors do not have a method or closure named "sendFlie".' in B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CComponent->__call('sendFlie', Array)
+#1 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CHttpRequest->sendFlie('test.xls', '<table><tr></tr...')
+#2 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\actions\CInlineAction.php(49): CountriesController->actionIndex()
+#3 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#7 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('countries/index')
+#8 B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 B:\xampp\htdocs\Publico\Practicas\yii\facilito\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/Publico/Practicas/yii/facilito/countries/index.cosa
+HTTP_REFERER=http://localhost/Publico/Practicas/yii/facilito/countries/index.cosa
+---
+2015/07/17 09:14:42 [error] [exception.CException] exception 'CException' with message 'CHttpRequest and its behaviors do not have a method or closure named "sendFlie".' in B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CComponent->__call('sendFlie', Array)
+#1 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CHttpRequest->sendFlie('test.xls', '<table><tr>This...')
+#2 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\actions\CInlineAction.php(49): CountriesController->actionIndex()
+#3 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#7 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('countries/index')
+#8 B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 B:\xampp\htdocs\Publico\Practicas\yii\facilito\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/Publico/Practicas/yii/facilito/countries/index.cosa
+HTTP_REFERER=http://localhost/Publico/Practicas/yii/facilito/countries/index.cosa
+---
+2015/07/17 09:15:00 [error] [exception.CException] exception 'CException' with message 'CHttpRequest and its behaviors do not have a method or closure named "sendFlie".' in B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CComponent->__call('sendFlie', Array)
+#1 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CHttpRequest->sendFlie('test.xls', '<table><tr>This...')
+#2 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\actions\CInlineAction.php(49): CountriesController->actionIndex()
+#3 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#7 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('countries/index')
+#8 B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 B:\xampp\htdocs\Publico\Practicas\yii\facilito\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/Publico/Practicas/yii/facilito/countries/index.cosa
+HTTP_REFERER=http://localhost/Publico/Practicas/yii/facilito/countries/index.cosa
+---
+2015/07/17 09:15:06 [error] [exception.CException] exception 'CException' with message 'CHttpRequest and its behaviors do not have a method or closure named "sendFlie".' in B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CComponent->__call('sendFlie', Array)
+#1 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CHttpRequest->sendFlie('test.xls', '<table><tr>This...')
+#2 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\actions\CInlineAction.php(49): CountriesController->actionIndex()
+#3 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#7 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('countries/index')
+#8 B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 B:\xampp\htdocs\Publico\Practicas\yii\facilito\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/Publico/Practicas/yii/facilito/countries/index.cosa
+HTTP_REFERER=http://localhost/Publico/Practicas/yii/facilito/countries/index.cosa
+---
+2015/07/17 09:23:09 [error] [exception.CException] exception 'CException' with message 'CHttpRequest and its behaviors do not have a method or closure named "sendFlie".' in B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CComponent->__call('sendFlie', Array)
+#1 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CHttpRequest->sendFlie('test.xls', '<table><tr><td>...')
+#2 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\actions\CInlineAction.php(49): CountriesController->actionIndex()
+#3 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#7 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('countries/index')
+#8 B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 B:\xampp\htdocs\Publico\Practicas\yii\facilito\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/Publico/Practicas/yii/facilito/countries/index.cosa
+HTTP_REFERER=http://localhost/Publico/Practicas/yii/facilito/countries/index.cosa
+---
+2015/07/17 09:23:43 [error] [exception.CException] exception 'CException' with message 'CHttpRequest and its behaviors do not have a method or closure named "sendFlie".' in B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CComponent->__call('sendFlie', Array)
+#1 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(12): CHttpRequest->sendFlie('test.xls', '<table><tr><td>...')
+#2 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\actions\CInlineAction.php(49): CountriesController->actionIndex()
+#3 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#7 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('countries/index')
+#8 B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 B:\xampp\htdocs\Publico\Practicas\yii\facilito\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/Publico/Practicas/yii/facilito/countries/index.cosa
+HTTP_REFERER=http://localhost/Publico/Practicas/yii/facilito/countries/index.cosa
+---
+2015/07/17 09:30:02 [error] [exception.CException] exception 'CException' with message 'CountriesController cannot find the requested view "excel".' in B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php:878
+Stack trace:
+#0 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(6): CController->renderPartial('excel', Array)
+#1 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\actions\CInlineAction.php(49): CountriesController->actionIndex()
+#2 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#6 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('countries/index')
+#7 B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 B:\xampp\htdocs\Publico\Practicas\yii\facilito\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Publico/Practicas/yii/facilito/countries/index.cosa
+HTTP_REFERER=http://localhost/Publico/Practicas/yii/facilito/countries/index.cosa
+---
+2015/07/17 09:30:59 [error] [exception.CException] exception 'CException' with message 'CountriesController cannot find the requested view "excel".' in B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php:878
+Stack trace:
+#0 B:\xampp\htdocs\Publico\Practicas\yii\facilito\protected\controllers\CountriesController.php(6): CController->renderPartial('excel', Array, true)
+#1 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\actions\CInlineAction.php(49): CountriesController->actionIndex()
+#2 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#6 B:\xampp\htdocs\Publico\Practicas\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('countries/index')
+#7 B:\xampp\htdocs\Publico\Practicas\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 B:\xampp\htdocs\Publico\Practicas\yii\facilito\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Publico/Practicas/yii/facilito/countries/index.cosa
+HTTP_REFERER=http://localhost/Publico/Practicas/yii/facilito/countries/index.cosa
+---
