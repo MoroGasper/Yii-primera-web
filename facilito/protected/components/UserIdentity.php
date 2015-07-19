@@ -27,11 +27,16 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
 		{
-			//Setear variables para tener acceso delde la aplicacion usando Yii::app()->user->id
+			//Setear variables para tener acceso desde la aplicacion usando Yii::app()->user->id
 			$this->_id=$user->id;
 			$this->setState("email", $user->email);
 			$this->errorCode=self::ERROR_NONE;
 		}
 		return !$this->errorCode;
+	}
+
+	public function getId()
+	{
+		return $this->_id;
 	}
 }
