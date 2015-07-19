@@ -8,11 +8,11 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'users-form',
+	'enableAjaxValidation'=>false,
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -38,7 +38,7 @@
 	</div>
 
 	<div class="buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array("class"=>"btn btn-primary btn-large")); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'btn btn-primary btn-large')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

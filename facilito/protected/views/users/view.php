@@ -20,7 +20,7 @@ $this->menu=array(
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
-	'htmlOptions'=>array("class"=>"table table-striped"),
+	'htmlOptions'=>array('class'=>'table table-striped'),
 	'attributes'=>array(
 		'id',
 		'username',
