@@ -24,7 +24,7 @@ return array(
 
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'m3yl1ngA',
+			'password'=>'facilito',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
@@ -34,6 +34,10 @@ return array(
 	// application components
 	'components'=>array(
 
+		'authManager'=>array(
+			"class"=>"CDbAuthManager",
+			"connectionID"=>"db",
+		),
 		'happy'=>array(
 			"class"=>"ext.JGHappy",
 			"trato"=>1,
@@ -47,7 +51,7 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'showScriptName'=>false,
-			'urlSuffix'=>'.cosa',
+			'urlSuffix'=>'.algo',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
