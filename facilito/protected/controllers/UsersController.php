@@ -53,6 +53,12 @@ class UsersController extends Controller
 	{
 		$role=new RoleForm;
 
+		if (isset($_POST["ajax"]) and $_POST["ajax"]==="role-form")
+		{
+			echo CActiveForm::validate($role);
+			Yii::app()->end();
+		}
+
 		if (isset($_POST["RoleForm"]))
 		{
 			$role->attributes=$_POST["RoleForm"];
