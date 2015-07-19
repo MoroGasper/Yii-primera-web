@@ -3,6 +3,16 @@
 	{
 		public function actionIndex()
 		{
+			//Creando Role y asignando usuario
+			#Yii::app()->authManager->createRole("admin");
+			#Yii::app()->authManager->assign("admin",1);
+			/*if (Yii::app()->authManager->checkAccess("admin", Yii::app()->user->id)) {
+				echo "Hola desde authManager";
+			}*/
+			#echo Yii::app()->user->id;
+			if (Yii::app()->user->checkAccess("admin")) {
+				echo "Hola";
+			}
 			//Exportar excel si existe la solicitud get
 			if (isset($_GET["excel"]))
 			{

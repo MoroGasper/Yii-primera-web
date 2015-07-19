@@ -36,8 +36,8 @@ class UsersController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'actions'=>array('admin','delete','assign'),
+				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -51,8 +51,22 @@ class UsersController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$role=new RoleForm;
+
+		if (isset($_POST["RoleForm"]))
+		{
+			$role->attributes=$_POST["RoleForm"];
+			if ($role->validate())
+			{
+				Yii::app()->authManager->createRole($role->name,$role->description);
+				Yii::app()->authManager->assign($role->name,$id);
+
+				$this->redirect(array("view","id"=>$id));
+			}
+		}
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			'role'=>$role,
 		));
 	}
 
@@ -141,6 +155,19 @@ class UsersController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+
+	public function actionAssign($id)
+	{
+		if (Yii::app()->authManager->checkAccess($_GET["item"],$id))
+		{
+			Yii::app()->authManager->revoke($_GET["item"],$id);
+		}
+		else
+		{
+			Yii::app()->authManager->assign($_GET["item"],$id);
+		}
+		$this->redirect(array("view", "id"=>$id));
 	}
 
 	/**
