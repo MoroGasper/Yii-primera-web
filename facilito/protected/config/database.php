@@ -8,7 +8,7 @@ return array(
 	'connectionString' => 'mysql:host=localhost;dbname=facilito',
 	'emulatePrepare' => true,
 	'username' => 'root',
-	'password' => 'm3yl1ngA',
+	'password' => '',
 	'charset' => 'utf8',
 
 );
