@@ -1,4 +1,4 @@
-<?php
+?php
 
 class UsersController extends Controller
 {
@@ -7,7 +7,6 @@ class UsersController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-	public $defaultAction='admin';
 
 	/**
 	 * @return array action filters
@@ -28,8 +27,16 @@ class UsersController extends Controller
 	public function accessRules()
 	{
 		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','create','update','delete','assing', 'CitiesByCountry'),
+				'actions'=>array('admin','delete','assign'),
 				'roles'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -38,13 +45,35 @@ class UsersController extends Controller
 		);
 	}
 
-	public function actionCitiesByCountry()
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionView($id)
 	{
-		$list=Cities::model()->findAll("countries_id=?", array($_POST["Users"]["countries_id"]));
-		foreach ($list as $data)
+		$role=new RoleForm;
+
+		if (isset($_POST["ajax"]) and $_POST["ajax"]==="role-form")
 		{
-			echo "<option value=\"{$data->id}\">{$data->name}</option>";
+			echo CActiveForm::validate($role);
+			Yii::app()->end();
 		}
+
+		if (isset($_POST["RoleForm"]))
+		{
+			$role->attributes=$_POST["RoleForm"];
+			if ($role->validate())
+			{
+				Yii::app()->authManager->createRole($role->name,$role->description);
+				Yii::app()->authManager->assign($role->name,$id);
+
+				$this->redirect(array("view","id"=>$id));
+			}
+		}
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+			'role'=>$role,
+		));
 	}
 
 	/**
@@ -109,6 +138,17 @@ class UsersController extends Controller
 	}
 
 	/**
+	 * Lists all models.
+	 */
+	public function actionIndex()
+	{
+		$dataProvider=new CActiveDataProvider('Users');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+
+	/**
 	 * Manages all models.
 	 */
 	public function actionAdmin()
@@ -121,6 +161,19 @@ class UsersController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+
+	public function actionAssign($id)
+	{
+		if (Yii::app()->authManager->checkAccess($_GET["item"],$id))
+		{
+			Yii::app()->authManager->revoke($_GET["item"],$id);
+		}
+		else
+		{
+			Yii::app()->authManager->assign($_GET["item"],$id);
+		}
+		$this->redirect(array("view", "id"=>$id));
 	}
 
 	/**

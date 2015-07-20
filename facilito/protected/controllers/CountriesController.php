@@ -10,9 +10,10 @@
 				echo "Hola desde authManager";
 			}*/
 			#echo Yii::app()->user->id;
-			if (Yii::app()->user->checkAccess("admin")) {
-				echo "Hola";
-			}
+			// if (Yii::app()->user->checkAccess("admin")) {
+			// 	echo "Hola";
+			// }
+
 			//Exportar excel si existe la solicitud get
 			if (isset($_GET["excel"]))
 			{

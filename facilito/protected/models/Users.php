@@ -1,13 +1,19 @@
 <?php
 
 /**
- * This is the model class for table "tbl_user".
+ * This is the model class for table "users".
  *
- * The followings are the available columns in table 'tbl_user':
+ * The followings are the available columns in table 'users':
  * @property integer $id
  * @property string $username
  * @property string $password
  * @property string $email
+ * @property string $birthday
+ * @property string $name
+ * @property string $last_name
+ * @property integer $countries_id
+ * @property integer $cities_id
+ * @property integer $status
  */
 class Users extends CActiveRecord
 {
@@ -16,7 +22,7 @@ class Users extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tbl_user';
+		return 'users';
 	}
 
 	/**
@@ -27,11 +33,13 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, email', 'required'),
+			array('username, password, email, birthday, name, last_name, countries_id, cities_id, status', 'required'),
+			array('countries_id, cities_id, status', 'numerical', 'integerOnly'=>true),
 			array('username, password, email', 'length', 'max'=>128),
+			array('name, last_name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, email', 'safe', 'on'=>'search'),
+			array('id, username, password, email, birthday, name, last_name, countries_id, cities_id, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +64,12 @@ class Users extends CActiveRecord
 			'username' => 'Username',
 			'password' => 'Password',
 			'email' => 'Email',
+			'birthday' => 'Birthday',
+			'name' => 'Name',
+			'last_name' => 'Last Name',
+			'countries_id' => 'Countries',
+			'cities_id' => 'Cities',
+			'status' => 'Status',
 		);
 	}
 
@@ -81,10 +95,28 @@ class Users extends CActiveRecord
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('email',$this->email,true);
+		$criteria->compare('birthday',$this->birthday,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('last_name',$this->last_name,true);
+		$criteria->compare('countries_id',$this->countries_id);
+		$criteria->compare('cities_id',$this->cities_id);
+		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	public function getMenuCountries()
+	{
+		$countries=Countries::model()->findAll("status=?",array(1));
+		return CHtml::listData($countries,"id","selectName");
+	}
+
+	public function getMenuCities($defaultCountry)
+	{
+		$cities=Cities::model()->findAll("status=? AND countries_id=?",array(1,$defaultCountry));
+		return CHtml::listData($cities,"id","name");
 	}
 
 	/**

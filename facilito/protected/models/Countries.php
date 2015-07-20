@@ -17,5 +17,10 @@
 				array("name, status", "required")
 			);
 		}
+
+		public function getSelectName()
+		{
+			return $this->name." ".$this->id;
+		}
 	}
 ?>
